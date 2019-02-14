@@ -25,3 +25,50 @@
 * Don't forget to prefix your containers with your own identifier
 * to avoid any conflicts with others containers.
 */
+$(document).ready(function () {
+    var $searchWidget = $('#url');
+    //var $searchBox    = $("select[class=dd_select]", $element).val()
+    var searchURL     = $searchWidget.attr('data-search-controller-url');
+    $('.dd_select').on('change',function(){
+        var $searchBox    = $(".dd_select").val();
+
+        if($searchBox == 'ampoule'){
+            $('.contener').append('</br><div class="col-md-6 question" id="quest1"><label>la maison est-elle déjà installé? </label><div class="form-check form-check-inline">\n' +
+                '                    <input name="home" type="radio" value="home1">\n' +
+                '                    <label class="form-check-label" for="localiteCheckbox1">oui</label>\n' +
+                '                </div>\n' +
+                '                <div class="form-check form-check-inline">\n' +
+                '                    <input checked="" name="home" type="radio" value="home2">\n' +
+                '                    <label class="form-check-label" for="localiteCheckbox2">Non</label>\n' +
+                '                </div></div>');
+            $('input:radio[name="home"]').change(function(){
+                if($(this).val() == 'home1'){
+                    //alert("test");
+                    $('.contener').append('</br><div class="col-md-6 question" id="questhome"><label>combien d’ampoules avez-vous au total ? </label></div>');
+                    $('.contener').append('</br><div class="col-md-6 question" id="questhome"><label>Quelle est puissance moyenne? </label></div>');
+
+                }
+            });
+        }else if($searchBox == 'ampoule2'){
+
+        }else if($searchBox == 'television'){
+
+        }else if($searchBox == 'ventilateur'){
+
+        }else if($searchBox == 'ordinateur'){
+
+        }else if($searchBox == 'radio'){
+
+        }else if($searchBox == 'frigo-congelateur'){
+
+        }
+    });
+
+    $('input:radio[name="postage"]').change(function(){
+        if($(this).val() == 'localite2'){
+            alert("test");
+            // $('.contener').append('</br><div class="col-md-6 question" id="questhome"><label>la maison est-elle déjà installé? </label></div>');
+        }
+    });
+
+});

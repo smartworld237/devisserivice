@@ -39,7 +39,7 @@ class Devisservice extends Module
         $this->version = '1.0.0';
         $this->author = 'smartworld';
         $this->need_instance = 1;
-
+       // $this->controllers = array('service');
         /**
          * Set $this->bootstrap to true if your module is compliant with bootstrap (PrestaShop 1.6)
          */
