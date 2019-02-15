@@ -33,7 +33,14 @@ $(document).ready(function () {
         var $searchBox    = $(".dd_select").val();
 
         if($searchBox == 'ampoule'){
-            $('.contener').append('</br><div class="col-md-6 question" id="quest1"><label>la maison est-elle déjà installé? </label><div class="form-check form-check-inline">\n' +
+            $('#quest_tele1').remove();
+            $('#quest_tele2').remove();
+            $('#quest_tele3').remove(); $('#quest_tele4').remove();
+            $('#questhome').remove();
+            $('#questhome1').remove();
+            $('#quest_vent1').remove();
+            $('#quest_vent2').remove();
+            $('.contener').append('<div class="col-md-6 question" id="quest1"><label>la maison est-elle déjà installé? </label><div class="form-check form-check-inline">\n' +
                 '                    <input name="home" type="radio" value="home1">\n' +
                 '                    <label class="form-check-label" for="localiteCheckbox1">oui</label>\n' +
                 '                </div>\n' +
@@ -42,18 +49,54 @@ $(document).ready(function () {
                 '                    <label class="form-check-label" for="localiteCheckbox2">Non</label>\n' +
                 '                </div></div>');
             $('input:radio[name="home"]').change(function(){
+
                 if($(this).val() == 'home1'){
-                    //alert("test");
-                    $('.contener').append('</br><div class="col-md-6 question" id="questhome"><label>combien d’ampoules avez-vous au total ? </label></div>');
-                    $('.contener').append('</br><div class="col-md-6 question" id="questhome"><label>Quelle est puissance moyenne? </label></div>');
+                    $('#quest_tele1').remove();
+                    $('#quest_tele2').remove();
+                    $('#quest_tele3').remove();
+                    $('#questhome').remove();
+                    $('#questhome1').remove();
+                    $('.contener').append('<div class="form-group col-md-6 question" id="questhome"><label>combien d’ampoules avez-vous au total ? </label>' +
+                        '<input id="rephome" class="form-control"/></div>');
+                    $('.contener').append('<div class="form-group col-md-6 question" id="questhome1"><label>Quelle est puissance moyenne? </label>' +
+                        '<input id="rephome1" class="form-control"/></div></div>');
 
                 }
             });
         }else if($searchBox == 'ampoule2'){
 
         }else if($searchBox == 'television'){
-
+            $('#questhome').remove();
+            $('#questhome1').remove();
+            $('#quest_tele1').remove();
+            $('#quest_tele2').remove();
+            $('#quest_tele3').remove();
+            $('#quest_tele4').remove();
+            $('#quest1').remove();
+            $('#quest_vent1').remove();
+            $('#quest_vent2').remove();
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele1"><label>Votre téléviseur écran cathodique ou écran plat ? </label>' +
+                '<input id="resp1" class="form-control" name="televiseur"/></div>');
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele2"><label>Combien en avez-vous ? </label>' +
+                '<input id="resp1" class="form-control" name="televiseur-quantite"/></div>');
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele3"><label>Quelle est la taille (pouce) de chacun d’eux ? </label>' +
+                '<input id="resp1" class="form-control" name="televiseur-taille"/></div>');
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele4"><label>Quelle est leur puissance globale ? </label>' +
+                '<input id="resp1" class="form-control" name="televiseur-puisance"/></div>');
         }else if($searchBox == 'ventilateur'){
+            $('#questhome').remove();
+            $('#questhome1').remove();
+            $('#quest_tele1').remove();
+            $('#quest_tele2').remove();
+            $('#quest_tele3').remove();
+            $('#quest_tele4').remove();
+            $('#quest_vent1').remove();
+            $('#quest_vent2').remove();
+            $('#quest1').remove();
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_vent1"><label>Combien en avez-vous ? </label>' +
+                '<input id="resp1" class="form-control" name="ventillateur-quantite"/></div>');
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_vent2"><label>Combien aimeriez-vous faire fonctionner en cas de coupure de courant ? </label>' +
+                '<input id="resp1" class="form-control" name="televiseur-quantite-prevoir"/></div>');
 
         }else if($searchBox == 'ordinateur'){
 

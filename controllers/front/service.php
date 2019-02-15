@@ -24,4 +24,7 @@ class DevisServiceServiceModuleFrontController extends ModuleFrontController
         $this->setTemplate('module:devisservice/views/templates/front/servicedevis.tpl');
 
     }
+    public function processServiceResidentiel(){
+
+    }
 }

@@ -27,9 +27,40 @@ $sql = array();
 
 $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservice` (
     `id_devisservice` int(11) NOT NULL AUTO_INCREMENT,
+     `id_devisservicemodel` int(11) NOT NULL,
+      `id_client` int(11) NOT NULL,
     PRIMARY KEY  (`id_devisservice`)
 ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
-
+$sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservicemodel` (
+    `id_devisservicemodel` int(11) NOT NULL AUTO_INCREMENT
+    PRIMARY KEY  (`id_devisservice`)
+) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
+$sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservicemodel_lang` (
+  `id_devisservicemodel` int(11) NOT NULL auto_increment,
+  `id_lang` int(11) NOT NULL ,
+  `libelle1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle2` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle3` text NOT NULL,
+  `libelle4` text NOT NULL,
+  `libelle5` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_1_1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_1_2` text NOT NULL,
+  `libelle5_2` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_2_1` text NOT NULL,
+  `libelle5_3` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_3_1` text NOT NULL,
+  `libelle5_3_2` text NOT NULL,
+  `libelle5_3_3` text NOT NULL,
+  `libelle5_4` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_4_1` text NOT NULL,
+  `libelle5_4_2` text NOT NULL,
+  `typeservice` text NOT NULL,
+  `libelle1_1` text NOT NULL,
+  `created` datetime DEFAULT CURRENT_TIMESTAMP ,
+  `modified` datetime DEFAULT CURRENT_TIMESTAMP ,
+  PRIMARY KEY (`id_devisservicemodel`,`id_lang`)
+) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8';
 foreach ($sql as $query) {
     if (Db::getInstance()->execute($query) == false) {
         return false;

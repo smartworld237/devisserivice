@@ -30,7 +30,9 @@
  * but does not want to loose all of the data associated to the module.
  */
 $sql = array();
-
+$sql[] = 'DROP TABLE IF EXISTS  `'._DB_PREFIX_.'devisservice`';
+$sql[] = 'DROP TABLE IF EXISTS  `'._DB_PREFIX_.'devisservicemodel`';
+$sql[] = 'DROP TABLE IF EXISTS  `'._DB_PREFIX_.'devisservicemodel_lang`';
 foreach ($sql as $query) {
     if (Db::getInstance()->execute($query) == false) {
         return false;

@@ -26,30 +26,35 @@
 {block name='content'}
 
     <div class="container" id="url" data-search-controller-url="{$devis_controller_url}">
-        <h1 class="h3">{l s='Send a Devis' d='Modules.demandedevis'}</h1>
+        <h1>{l s='Send a Devis' d='Modules.demandedevis'}</h1>
         <p>{l s='If you would like to add a comment about your order, please write it in the field below.' d='Modules.Contactform.Shop'}</p>
+        <div id="service-residentiel">
+            <input name="service-residentiel" class="hidden"/>
+            <h1 class="h3 center-block">{l s='Service Residentiel' d='Modules.demandedevis'}</h1>
+
+        </div>
         <form class="form" action="{$devis_controller_url}" method="post">
             <div class="row">
                 <h3>Exploration des besoins</h3>
                 <div class="form-group col-md-6">
                     <label for="pwd">Votre localité est-elle alimentée par le courant électrique ? </label>
-                <div class="form-check form-check-inline">
+                <div class="form-check">
                     <input class="form-check-input" name="postage" checked="" type="radio" id="localiteCheckbox1" value="localite1">
                     <label class="form-check-label" for="localiteCheckbox1">oui</label>
                 </div>
-                <div class="form-check form-check-inline">
+                <div class="form-check">
                     <input class="form-check-input" name="postage" type="radio" id="localiteCheckbox2" value="localite2">
                     <label class="form-check-label" for="localiteCheckbox2">Non</label>
                 </div>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Etes-vous victime des coupures intempestives du courant électrique ? </label>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="coupureCheckbox1" value="coupure1">
-                        <label style="size: 8px" for="coupureCheckbox1">oui</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="coupureCheckbox1" id="coupureCheckbox1" value="coupure1">
+                        <label for="coupureCheckbox1">oui</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" id="coupureCheckbox2" value="coupure2">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="coupureCheckbox1" id="coupureCheckbox2" value="coupure2">
                         <label for="coupureCheckbox2">Non</label>
                     </div>
                 </div>
@@ -80,6 +85,9 @@
             </div>
                </div>
     </div>
+            <button class="btn btn-success" type="submit" name="submitserviceresidentiel">Demander un Devis</button>
+
         </form>
+        <br>
     </div>
 {/block}
