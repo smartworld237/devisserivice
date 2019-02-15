@@ -41,16 +41,16 @@ $(document).ready(function () {
             $('#quest_vent1').remove();
             $('#quest_vent2').remove();
             $('.contener').append('<div class="col-md-6 question" id="quest1"><label>la maison est-elle déjà installé? </label><div class="form-check form-check-inline">\n' +
-                '                    <input name="home" type="radio" value="home1">\n' +
+                '                    <input name="home" type="radio" value="oui">\n' +
                 '                    <label class="form-check-label" for="localiteCheckbox1">oui</label>\n' +
                 '                </div>\n' +
                 '                <div class="form-check form-check-inline">\n' +
-                '                    <input checked="" name="home" type="radio" value="home2">\n' +
+                '                    <input checked="" name="home" type="radio" value="non">\n' +
                 '                    <label class="form-check-label" for="localiteCheckbox2">Non</label>\n' +
                 '                </div></div>');
             $('input:radio[name="home"]').change(function(){
 
-                if($(this).val() == 'home1'){
+                if($(this).val() == 'oui'){
                     $('#quest_tele1').remove();
                     $('#quest_tele2').remove();
                     $('#quest_tele3').remove();
@@ -96,13 +96,24 @@ $(document).ready(function () {
             $('.contener').append('<div class="form-group col-md-6 question" id="quest_vent1"><label>Combien en avez-vous ? </label>' +
                 '<input id="resp1" class="form-control" name="ventillateur-quantite"/></div>');
             $('.contener').append('<div class="form-group col-md-6 question" id="quest_vent2"><label>Combien aimeriez-vous faire fonctionner en cas de coupure de courant ? </label>' +
-                '<input id="resp1" class="form-control" name="televiseur-quantite-prevoir"/></div>');
+                '<input id="resp1" class="form-control" name="ventillateur-quantite-prevoir"/></div>');
 
         }else if($searchBox == 'ordinateur'){
 
         }else if($searchBox == 'radio'){
 
         }else if($searchBox == 'frigo-congelateur'){
+            $('#questhome').remove();
+            $('#questhome1').remove();
+            $('#quest_tele1').remove();
+            $('#quest_tele2').remove();
+            $('#quest_tele3').remove();
+            $('#quest_tele4').remove();
+            $('#quest_vent1').remove();
+            $('#quest_vent2').remove();
+            $('#quest1').remove();
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_vent2"><label>Combien aimeriez-vous faire fonctionner en cas de coupure de courant ? </label>' +
+                '<input id="resp1" class="form-control" name="frigo-congelateur"/></div>');
 
         }
     });

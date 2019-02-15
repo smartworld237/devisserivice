@@ -31,10 +31,13 @@ $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservice` (
       `id_client` int(11) NOT NULL,
     PRIMARY KEY  (`id_devisservice`)
 ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
+
 $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservicemodel` (
-    `id_devisservicemodel` int(11) NOT NULL AUTO_INCREMENT
-    PRIMARY KEY  (`id_devisservice`)
+    `id_devisservicemodel` int(11) NOT NULL AUTO_INCREMENT,
+    PRIMARY KEY  (`id_devisservicemodel`)
 ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
+
+
 $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservicemodel_lang` (
   `id_devisservicemodel` int(11) NOT NULL auto_increment,
   `id_lang` int(11) NOT NULL ,

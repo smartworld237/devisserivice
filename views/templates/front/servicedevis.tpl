@@ -25,13 +25,13 @@
 {extends file='page.tpl'}
 {block name='content'}
 
-    <div class="container" id="url" data-search-controller-url="{$devis_controller_url}">
+    <div class="container">
         <h1>{l s='Send a Devis' d='Modules.demandedevis'}</h1>
         <p>{l s='If you would like to add a comment about your order, please write it in the field below.' d='Modules.Contactform.Shop'}</p>
         <div id="service-residentiel">
             <input name="service-residentiel" class="hidden"/>
             <h1 class="h3 center-block">{l s='Service Residentiel' d='Modules.demandedevis'}</h1>
-
+            {if $test}<p>{$test}</p> {/if}
         </div>
         <form class="form" action="{$devis_controller_url}" method="post">
             <div class="row">
@@ -39,11 +39,11 @@
                 <div class="form-group col-md-6">
                     <label for="pwd">Votre localité est-elle alimentée par le courant électrique ? </label>
                 <div class="form-check">
-                    <input class="form-check-input" name="postage" checked="" type="radio" id="localiteCheckbox1" value="localite1">
+                    <input class="form-check-input" name="localite" checked="" type="radio" id="localiteCheckbox1" value="localite1">
                     <label class="form-check-label" for="localiteCheckbox1">oui</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" name="postage" type="radio" id="localiteCheckbox2" value="localite2">
+                    <input class="form-check-input" name="localite" type="radio" id="localiteCheckbox2" value="localite2">
                     <label class="form-check-label" for="localiteCheckbox2">Non</label>
                 </div>
                 </div>
@@ -61,11 +61,11 @@
 
                 <div class="form-group col-md-6">
                     <label for="pwd">Combien de temps peut durer une coupure de courant électriques ?</label>
-                    <input type="number" class="form-control" id="pwd1">
+                    <input type="number" name="qte_electrique" class="form-control" id="pwd1">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="pwd">Dans quelle localité vous trouvez vous ?</label>
-                    <input type="text" class="form-control" id="pwd2">
+                    <input type="text" name="localite2" class="form-control" id="pwd2">
                 </div>
             </div>
            <div class="row">
@@ -73,7 +73,7 @@
                <div class="contener">
             <div class="form-group col-md-6">
                 <label for="pwd">En cas de délestage quels appareils aimeriez-vous faire fonctionner ?</label>
-                <select  class="form-control dd_select" id="pwd1">
+                <select  class="form-control dd_select" id="pwd1" name="appareils">
                 <option>choisir appareils</option>
                     <option value="ampoule">éclairage ampoule </option>
                     <option value="television">télévision</option>
@@ -85,7 +85,7 @@
             </div>
                </div>
     </div>
-            <button class="btn btn-success" type="submit" name="submitserviceresidentiel">Demander un Devis</button>
+            <button class="btn btn-success" type="submit" name="submitservice">Demander un Devis</button>
 
         </form>
         <br>

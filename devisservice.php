@@ -27,6 +27,7 @@
 if (!defined('_PS_VERSION_')) {
     exit;
 }
+require_once _PS_MODULE_DIR_ . 'devisservice/classes/ServiceDevisModel.php';
 
 class Devisservice extends Module
 {
@@ -38,8 +39,8 @@ class Devisservice extends Module
         $this->tab = 'front_office_features';
         $this->version = '1.0.0';
         $this->author = 'smartworld';
-        $this->need_instance = 1;
-       // $this->controllers = array('service');
+        $this->need_instance = 0;
+        $this->controllers = array('service');
         /**
          * Set $this->bootstrap to true if your module is compliant with bootstrap (PrestaShop 1.6)
          */

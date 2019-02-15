@@ -10,7 +10,7 @@ class DemandeServiceModel extends ObjectModel
 {
     public $id_service_redentiel;
     public $id_service_pompage;
-    public $id_service_backup;
+    public $id_service;
     public $id_client;
     public static $definition = array(
         'table' => 'devisservice',
