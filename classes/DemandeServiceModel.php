@@ -8,23 +8,21 @@
 
 class DemandeServiceModel extends ObjectModel
 {
-    public $id_service_redentiel;
-    public $id_service_pompage;
-    public $id_service;
+    public $id_devisservicemodel;
     public $id_client;
     public static $definition = array(
         'table' => 'devisservice',
         'primary' => 'id_devisservice',
-        'multilang' => true,
+       // 'multilang' => true,
         'fields' => array(
-            'id_shop' =>			array('type' => self::TYPE_NOTHING, 'validate' => 'isUnsignedId'),
+            //'id_shop' =>			array('type' => self::TYPE_NOTHING, 'validate' => 'isUnsignedId'),
             // Lang fields
             'id_client' => array('type' => self::TYPE_INT),
-            'id_service'=>array('type' => self::TYPE_INT),
+            'id_devisservicemodel'=>array('type' => self::TYPE_INT),
             //'id_service_redentiel'=>array('type' => self::TYPE_INT),
            // 'id_service_backup'=>array('type' => self::TYPE_INT),
             //'id_service_pompage'=>array('type' => self::TYPE_INT),
-            'prix_total'=>array('type' => self::TYPE_FLOAT)
+            //'prix_total'=>array('type' => self::TYPE_FLOAT)
         ),
 
     );

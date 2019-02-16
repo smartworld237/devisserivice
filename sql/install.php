@@ -45,7 +45,7 @@ $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservicemodel_lang`
   `libelle2` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
   `libelle3` text NOT NULL,
   `libelle4` text NOT NULL,
-  `libelle5` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5` text NOT NULL,
   `libelle5_1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
   `libelle5_1_1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
   `libelle5_1_2` text NOT NULL,

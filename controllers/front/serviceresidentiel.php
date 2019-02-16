@@ -5,8 +5,10 @@
  * Date: 14/02/2019
  * Time: 13:51
  */
+require_once _PS_MODULE_DIR_ . 'devisservice/classes/ServiceDevisModel.php';
+require_once _PS_MODULE_DIR_ . 'devisservice/classes/DemandeServiceModel.php';
 
-class DevisServiceServiceModuleFrontController extends ModuleFrontController
+class DevisServiceServiceResidentielModuleFrontController extends ModuleFrontController
 {
     /**
      * @see FrontController::initContent()
@@ -17,6 +19,7 @@ class DevisServiceServiceModuleFrontController extends ModuleFrontController
         $this->context->smarty->assign(array(
             //'orders' => $this->getProducts(),
             //'test' => 'reza',
+            'serviceresidentiel' => 'service-residentiel',
             'controller' => $this->context->link->getPageLink('service'),
             'devis_controller_url' => $this->context->link->getModuleLink('devisservice', 'service', $parameters)
         ));
@@ -25,6 +28,13 @@ class DevisServiceServiceModuleFrontController extends ModuleFrontController
             $this->context->smarty->assign(array(
                 //'orders' => $this->getProducts(),
                 'test' => 'reza',
+            ));
+            $this->processService();
+        }
+        if (Tools::getValue('service-residentiel')) {
+            $this->context->smarty->assign(array(
+                //'orders' => $this->getProducts(),
+                'serviceresidentiel' => 'service-residentiel',
             ));
             $this->processService();
         }
