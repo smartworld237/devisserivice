@@ -26,68 +26,67 @@
 {block name='content'}
 
     <div class="container">
-        <h1>{l s='Send a Devis' d='Modules.demandedevis'}</h1>
-        <p>{l s='If you would like to add a comment about your order, please write it in the field below.' d='Modules.Contactform.Shop'}</p>
+        <h1>{l s='Send a Devis' d='Modules.Devisservice.Shop'}</h1>
+        <p>{l s='If you would like to add a comment about your order, please write it in the field below.' mod='devisservice'}</p>
 
 
             <div id="service-residentiel">
                 <input name="service-residentiel" class="hidden"/>
-                <h1 class="h3 center-block">{l s='Service Backup' d='Modules.demandedevis'}</h1>
-                {if $test}<p>{$test}</p> {/if}
+                <h1 class="h3 center-block">{l s='Service Backup'  mod='devisservice'}}</h1>
             </div>
         <form class="form" action="{$devis_controller_url}" method="post">
             <div class="row">
-                <h3>Exploration des besoins</h3>
+                <h3>{l s='Exploration des besoins' mod='devisservice'}</h3>
                 <div class="form-group col-md-6">
-                    <label for="pwd">Votre localité est-elle alimentée par le courant électrique ? </label>
+                    <label for="pwd">{l s='Votre localité est-elle alimentée par le courant électrique ?' mod='devisservice'} </label>
                     <div class="form-check">
                         <input class="form-check-input" name="localite" checked="" type="radio" id="localiteCheckbox1" value="localite1">
-                        <label class="form-check-label" for="localiteCheckbox1">oui</label>
+                        <label class="form-check-label" for="localiteCheckbox1">{l s='oui' mod='devisservice'}</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" name="localite" type="radio" id="localiteCheckbox2" value="localite2">
-                        <label class="form-check-label" for="localiteCheckbox2">Non</label>
+                        <label class="form-check-label" for="localiteCheckbox2">{l s='Non' mod='devisservice'}</label>
                     </div>
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Etes-vous victime des coupures intempestives du courant électrique ? </label>
+                    <label>{l s='Etes-vous victime des coupures intempestives du courant électrique ?' mod='devisservice' } </label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="coupureCheckbox1" id="coupureCheckbox1" value="coupure1">
-                        <label for="coupureCheckbox1">oui</label>
+                        <label for="coupureCheckbox1">{l s='oui' mod='devisservice'}</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="coupureCheckbox1" id="coupureCheckbox2" value="coupure2">
-                        <label for="coupureCheckbox2">Non</label>
+                        <label for="coupureCheckbox2">{l s='Non' mod='devisservice'}</label>
                     </div>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="pwd">Combien de temps peut durer une coupure de courant électriques ?</label>
+                    <label for="pwd">{l s='Combien de temps peut durer une coupure de courant électriques ?' mod='devisservice'}</label>
                     <input type="number" name="qte_electrique" class="form-control" id="pwd1">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pwd">Dans quelle localité vous trouvez vous ?</label>
+                    <label for="pwd">{l s='Dans quelle localité vous trouvez vous ?' mod='devisservice'}</label>
                     <input type="text" name="localite2" class="form-control" id="pwd2">
                 </div>
             </div>
             <div class="row">
-                <h3>Dimensionnement (évaluation technique)</h3>
+                <h3>{l s='Dimensionnement (évaluation technique)' mod='devisservice'}</h3>
                 <div class="contener">
                     <div class="form-group col-md-6">
-                        <label for="pwd">En cas de délestage quels appareils aimeriez-vous faire fonctionner ?</label>
+                        <label for="pwd">{l s='En cas de délestage quels appareils aimeriez-vous faire fonctionner ?' mod='devisservice'}</label>
                         <select  class="form-control dd_select" id="pwd1" name="appareils">
-                            <option>choisir appareils</option>
-                            <option value="ampoule">éclairage ampoule </option>
-                            <option value="television">télévision</option>
-                            <option value="ventilateur">ventilateurs</option>
-                            <option value="ordinateur">ordinateurs</option>
-                            <option value="radio">Radio</option>
-                            <option value="frigo-congelateur">frigo ou congélateur</option>
+                            <option>{l s='choisir appareils' mod='devisservice'}</option>
+                            <option value="ampoule">{l s='éclairage ampoule' mod='devisservice'} </option>
+                            <option value="television">{l s='télévision' mod='devisservice'}</option>
+                            <option value="ventilateur">{l s='ventilateurs' mod='devisservice'}</option>
+                            <option value="ordinateur">{l s='ordinateurs' mod='devisservice'}</option>
+                            <option value="radio">{l s='Radio' mod='devisservice'}</option>
+                            <option value="frigo-congelateur">{l s='frigo ou congélateur' mod='devisservice'}</option>
                         </select>
                     </div>
                 </div>
             </div>
-            <button class="btn btn-success" type="submit" name="submitservice">Demander un Devis</button>
+            <button class="btn btn-success" type="submit" name="submitbackup">{l s='Demander un Devis' mod='devisservice'}</button>
 
         </form>
         <br>

@@ -21,20 +21,13 @@ class DevisServiceServiceResidentielModuleFrontController extends ModuleFrontCon
             //'test' => 'reza',
             'serviceresidentiel' => 'service-residentiel',
             'controller' => $this->context->link->getPageLink('service'),
-            'devis_controller_url' => $this->context->link->getModuleLink('devisservice', 'service', $parameters)
+            'devis_controller_url' => $this->context->link->getModuleLink('devisservice', 'serviceresidentiel', $parameters)
         ));
         parent::initContent();
-        if (Tools::isSubmit('submitservice')) {
+        if (Tools::isSubmit('submitresidentiel')) {
             $this->context->smarty->assign(array(
                 //'orders' => $this->getProducts(),
                 'test' => 'reza',
-            ));
-            $this->processService();
-        }
-        if (Tools::getValue('service-residentiel')) {
-            $this->context->smarty->assign(array(
-                //'orders' => $this->getProducts(),
-                'serviceresidentiel' => 'service-residentiel',
             ));
             $this->processService();
         }
@@ -50,7 +43,6 @@ class DevisServiceServiceResidentielModuleFrontController extends ModuleFrontCon
         $devisservice = new DemandeServiceModel();
         $devisservice->id_client = $customer->id;
 
-        if (Tools::getValue('service-residentiel')) {
             $devis->libelle1 = Tools::getValue('localite');
             //$devis->libelle1_1=Tools::getValue('coupureCheckbox1');
             $devis->libelle2 = Tools::getValue('coupureCheckbox1');
@@ -68,50 +60,15 @@ class DevisServiceServiceResidentielModuleFrontController extends ModuleFrontCon
             $devis->libelle5_3_3 = Tools::getValue('televiseur-taille');
             $devis->libelle5_4_1 = Tools::getValue('ventillateur-quantite');
             $devis->libelle5_4_2 = Tools::getValue('ventillateur-quantite-prevoir');
-            $devis->typeserice = "service-residentiel";
+            $devis->typeservice = "service-residentiel";
             $devis->save();
-        } else if (Tools::getValue('service-backup')) {
-            $devis->libelle1 = Tools::getValue('localite');
-            //$devis->libelle1_1=Tools::getValue('coupureCheckbox1');
-            $devis->libelle2 = Tools::getValue('coupureCheckbox1');
-            //$devis->libelle2_1=Tools::getValue('localite2');
-            $devis->libelle3 = Tools::getValue('qte_electrique');
-            $devis->libelle4 = Tools::getValue('localite2');
-            $devis->libelle5 = Tools::getValue('appareils');
-            $devis->libelle5_1 = Tools::getValue('home');
-            $devis->libelle5_1_1 = Tools::getValue('rephome1');
-            $devis->libelle5_1_2 = Tools::getValue('rephome2');
-            $devis->libelle5_2 = Tools::getValue('frigo-congelateur');
-            $devis->libelle5_3 = Tools::getValue('televiseur');
-            $devis->libelle5_3_1 = Tools::getValue('televiseur-puisance');
-            $devis->libelle5_3_2 = Tools::getValue('televiseur-quantite-prevoir');
-            $devis->libelle5_3_3 = Tools::getValue('televiseur-taille');
-            $devis->libelle5_4_1 = Tools::getValue('ventillateur-quantite');
-            $devis->libelle5_4_2 = Tools::getValue('ventillateur-quantite-prevoir');
-            $devis->typeserice = "service-backup";
-            $devis->save();
-        } else {
-            $devis->libelle1 = Tools::getValue('localite');
-            //$devis->libelle1_1=Tools::getValue('coupureCheckbox1');
-            $devis->libelle2 = Tools::getValue('coupureCheckbox1');
-            //$devis->libelle2_1=Tools::getValue('localite2');
-            $devis->libelle3 = Tools::getValue('qte_electrique');
-            $devis->libelle4 = Tools::getValue('localite2');
-            $devis->libelle5 = Tools::getValue('appareils');
-            $devis->libelle5_1 = Tools::getValue('home');
-            $devis->libelle5_1_1 = Tools::getValue('rephome1');
-            $devis->libelle5_1_2 = Tools::getValue('rephome2');
-            $devis->libelle5_2 = Tools::getValue('frigo-congelateur');
-            $devis->libelle5_3 = Tools::getValue('televiseur');
-            $devis->libelle5_3_1 = Tools::getValue('televiseur-puisance');
-            $devis->libelle5_3_2 = Tools::getValue('televiseur-quantite-prevoir');
-            $devis->libelle5_3_3 = Tools::getValue('televiseur-taille');
-            $devis->libelle5_4_1 = Tools::getValue('ventillateur-quantite');
-            $devis->libelle5_4_2 = Tools::getValue('ventillateur-quantite-prevoir');
-            $devis->typeserice = "service-residentiel";
-            $devis->save();
-        }
-        $devisservice->id_service = $devis->id_serviceresidentiel;
+            $sql='SELECT id_devisservicemodel as id FROM `' . _DB_PREFIX_ . 'devisservicemodel` ORDER BY id_devisservicemodel DESC LIMIT 1 ';
+            $content = Db::getInstance()->executeS($sql);
+            foreach ($content as $co){
+                $devisservice->id_devisservicemodel =$co['id'];
+                $devisservice->save();
+            }
 
-    }
+
+}
 }

@@ -97,9 +97,69 @@ class Devisservice extends Module
 
         $output = $this->context->smarty->fetch($this->local_path.'views/templates/admin/configure.tpl');
 
-        return $output.$this->renderForm();
+        return $output.$this->renderList();
     }
+    protected function renderList(){
+        $this->fields_list          = array();
+        $this->fields_list['id_devisservice'] = array(
+            'title' => $this->l('id'),
+            'type' => 'text',
+            'search' => false,
+            'orderby' => false
+        );
+        $this->fields_list['client'] = array(
+            'title' => $this->l('Client'),
+            'type' => 'text',
+            'search' => false,
+            'orderby' => false
+        );
+        $this->fields_list['typeservice'] = array(
+            'title' => $this->l('type de service'),
+            'type' => 'text',
+            'search' => false,
+            'orderby' => false
+        );
+        $helper = new HelperList();
+        $helper->shopLinkType   = '';
+        $helper->simple_header      = false;
+        $helper->identifier         = 'id_devisservice';
+        $helper->actions            = array(
+            'view',
+            'delete'
+        );
+        $helper->show_toolbar       = true;
+        $helper->imageType          = 'jpg';
+        /*$helper->toolbar_btn['new'] = array(
+            'href' => AdminController::$currentIndex . '&configure=' . $this->name . '&addreponseDevis'. '&token='
+                . Tools::getAdminTokenLite('AdminModules'),
+            'desc' => $this->l('Add new')
+        );*/
 
+        $helper->title        = 'Liste des Devis';
+        $helper->table        = $this->name;
+        $helper->token        = Tools::getAdminTokenLite('AdminModules');
+        $helper->currentIndex = AdminController::$currentIndex . '&configure=' . $this->name;
+
+        $content = $this->getListContent($this->context->language->id);
+
+        return $helper->generateList($content, $this->fields_list);
+    }
+    protected function getListContent($id_lang = null)
+    {
+        if (is_null($id_lang))
+            $id_lang = (int) Configuration::get('PS_LANG_DEFAULT');
+
+        $sql = 'SELECT d.`id_devisservice`, s.`typeservice`, c.`firstname` as client
+            FROM `' . _DB_PREFIX_ . 'devisservice`d 
+            LEFT JOIN `' . _DB_PREFIX_ . 'customer` c ON (d.`id_client` = c.`id_customer`) 
+         LEFT JOIN `' . _DB_PREFIX_ . 'devisservicemodel` s ON (s.`id_devisservicemodel` = d.`id_devisservicemodel`) ';
+
+
+
+        $content = Db::getInstance()->executeS($sql);
+
+        return $content;
+    }
     /**
      * Create the form that will be displayed in the configuration of your module.
      */

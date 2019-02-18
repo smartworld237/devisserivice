@@ -18,19 +18,14 @@ class  DevisServiceservicebackupModuleFrontController extends ModuleFrontControl
         $this->context->smarty->assign(array(
             //'orders' => $this->getProducts(),
             //'test' => 'reza',
-            'serviceresidentiel' => 'service-residentiel',
-            'controller' => $this->context->link->getPageLink('service'),
-            'devis_controller_url' => $this->context->link->getModuleLink('devisservice', 'service', $parameters)
+            'devis_controller_url' => $this->context->link->getModuleLink('devisservice', 'servicebackup', $parameters)
         ));
         parent::initContent();
-        if (Tools::isSubmit('submitservice')) {
+        if (Tools::isSubmit('submitbackup')) {
             $this->context->smarty->assign(array(
                 //'orders' => $this->getProducts(),
                 'test' => 'reza',
             ));
-            $this->processService();
-        }
-        if (Tools::getValue('service-backup')) {
             $this->processService();
         }
         $this->setTemplate('module:devisservice/views/templates/front/servicebackup.tpl');
@@ -61,10 +56,14 @@ class  DevisServiceservicebackupModuleFrontController extends ModuleFrontControl
             $devis->libelle5_3_3 = Tools::getValue('televiseur-taille');
             $devis->libelle5_4_1 = Tools::getValue('ventillateur-quantite');
             $devis->libelle5_4_2 = Tools::getValue('ventillateur-quantite-prevoir');
-            $devis->typeserice = "service-backup";
+            $devis->typeservice = "service-backup";
             $devis->save();
-        $devisservice->id_service = $devis->id_serviceresidentiel;
-        $devisservice->save();
+        $sql='SELECT id_devisservicemodel as id FROM `' . _DB_PREFIX_ . 'devisservicemodel` ORDER BY id_devisservicemodel DESC LIMIT 1 ';
+        $content = Db::getInstance()->executeS($sql);
+        foreach ($content as $co){
+            $devisservice->id_devisservicemodel =$co['id'];
+            $devisservice->save();
+        }
 
     }
 

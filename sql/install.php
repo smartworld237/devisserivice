@@ -34,31 +34,32 @@ $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservice` (
 
 $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservicemodel` (
     `id_devisservicemodel` int(11) NOT NULL AUTO_INCREMENT,
+      `typeservice` text NOT NULL,
+      `libelle1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle2` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_1_1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_2` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_3` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
+  `libelle5_4` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
     PRIMARY KEY  (`id_devisservicemodel`)
+    
 ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
 
 
 $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'devisservicemodel_lang` (
   `id_devisservicemodel` int(11) NOT NULL auto_increment,
   `id_lang` int(11) NOT NULL ,
-  `libelle1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
-  `libelle2` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
   `libelle3` text NOT NULL,
   `libelle4` text NOT NULL,
   `libelle5` text NOT NULL,
-  `libelle5_1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
-  `libelle5_1_1` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
   `libelle5_1_2` text NOT NULL,
-  `libelle5_2` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
   `libelle5_2_1` text NOT NULL,
-  `libelle5_3` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
   `libelle5_3_1` text NOT NULL,
   `libelle5_3_2` text NOT NULL,
   `libelle5_3_3` text NOT NULL,
-  `libelle5_4` tinyint(1) UNSIGNED NOT NULL DEFAULT "1",
   `libelle5_4_1` text NOT NULL,
   `libelle5_4_2` text NOT NULL,
-  `typeservice` text NOT NULL,
   `libelle1_1` text NOT NULL,
   `created` datetime DEFAULT CURRENT_TIMESTAMP ,
   `modified` datetime DEFAULT CURRENT_TIMESTAMP ,

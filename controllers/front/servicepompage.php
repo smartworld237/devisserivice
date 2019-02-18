@@ -62,7 +62,7 @@ class  DevisServiceservicepompageModuleFrontController extends ModuleFrontContro
             $devis->save();
        /* $devisservice->id_service = (int)$devis->id;
         $devisservice->save();*/
-       $sql='SELECT id_devisservicemodel as id FROM `' . _DB_PREFIX_ . 'devisservicemodel_lang` ORDER BY id_devisservicemodel DESC LIMIT 1 ';
+       $sql='SELECT id_devisservicemodel as id FROM `' . _DB_PREFIX_ . 'devisservicemodel` ORDER BY id_devisservicemodel DESC LIMIT 1 ';
         $content = Db::getInstance()->executeS($sql);
         foreach ($content as $co){
             $devisservice->id_devisservicemodel =$co['id'];

@@ -88,7 +88,7 @@
             </div>
                </div>
     </div>
-            <button class="btn btn-success" type="submit" name="submitservice">Demander un Devis</button>
+            <button class="btn btn-success" type="submit" name="submitresidentiel">Demander un Devis</button>
 
         </form>
         <br>
