@@ -41,11 +41,11 @@ class  DevisServiceservicepompageModuleFrontController extends ModuleFrontContro
         $devis = new ServiceDevisModel();
         $devisservice = new DemandeServiceModel();
         $devisservice->id_client = $customer->id;
-            $devis->libelle1 = (bool)Tools::getValue('localite');
-            //$devis->libelle1_1=Tools::getValue('coupureCheckbox1');
+            $devis->libelle1 = (bool)Tools::getValue('forage');
+            $devis->libelle1_1=Tools::getValue('reponeforage');
             $devis->libelle2 = (bool)Tools::getValue('coupureCheckbox1');
             //$devis->libelle2_1=Tools::getValue('localite2');
-            $devis->libelle3 = Tools::getValue('qte_electrique');
+            $devis->libelle3 = Tools::getValue('qteDeau');
             $devis->libelle4 = Tools::getValue('localite2');
             $devis->libelle5 = Tools::getValue('appareils');
             $devis->libelle5_1 = Tools::getValue('home');
@@ -53,7 +53,7 @@ class  DevisServiceservicepompageModuleFrontController extends ModuleFrontContro
             $devis->libelle5_1_2 = Tools::getValue('rephome2');
             $devis->libelle5_2 = Tools::getValue('frigo-congelateur');
             $devis->libelle5_3 = Tools::getValue('televiseur');
-            $devis->libelle5_3_1 = Tools::getValue('televiseur-puisance');
+            $devis->libelle5_3_1 = Tools::getValue('puissance');
             $devis->libelle5_3_2 = Tools::getValue('televiseur-quantite-prevoir');
             $devis->libelle5_3_3 = Tools::getValue('televiseur-taille');
             $devis->libelle5_4_1 = Tools::getValue('ventillateur-quantite');

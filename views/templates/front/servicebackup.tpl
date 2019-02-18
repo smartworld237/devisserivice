@@ -32,7 +32,7 @@
 
             <div id="service-residentiel">
                 <input name="service-residentiel" class="hidden"/>
-                <h1 class="h3 center-block">{l s='Service Backup'  mod='devisservice'}}</h1>
+                <h1 class="h3 center-block">{l s='Service Backup'  mod='devisservice'}</h1>
             </div>
         <form class="form" action="{$devis_controller_url}" method="post">
             <div class="row">

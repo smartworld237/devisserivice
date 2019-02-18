@@ -83,64 +83,9 @@
         &raquo; {l s='Service' mod='devisservice'} :
         {$detailDevisService->typeservice}
     </p>
-    <p>
-        <label class="control-label col-lg-8">{l s='Votre localité est-elle alimentée par le courant électrique' mod='devisservice'}</label>: {if $detailDevisService->libelle1}
-            <span class="label label-success">
-										<i class="icon-check"></i>
-                {l s='Oui' d='Admin.Global'}
-									</span>
-        {else}
-            <span class="label label-danger">
-										<i class="icon-remove"></i>
-                {l s='Non' d='Admin.Global'}
-									</span>
-        {/if}
-    </p>
-    <p>
-        <label class="control-label col-lg-8">{l s='Votre localité est-elle alimentée par le courant électrique' mod='devisservice'}
-        </label>: {if $detailDevisService->libelle1}
-            <span class="label label-success">
-										<i class="icon-check"></i>
-                {l s='Oui' d='Admin.Global'}
-									</span>
-        {else}
-            <span class="label label-danger">
-										<i class="icon-remove"></i>
-                {l s='Non' d='Admin.Global'}
-									</span>
-        {/if}
-    </p>
-    <p>
-        <label class="control-label col-lg-8">{l s='Etes-vous victime des coupures intempestives du courant électrique ?' mod='devisservice'}
-        </label>: {if $detailDevisService->libelle2}
-            <span class="label label-success">
-										<i class="icon-check"></i>
-                {l s='Oui' d='Admin.Global'}
-									</span>
-        {else}
-            <span class="label label-danger">
-										<i class="icon-remove"></i>
-                {l s='Non' d='Admin.Global'}
-									</span>
-        {/if}
-    </p>
-    <p>
-        <label class="control-label col-lg-8">{l s='Combien de temps peut durer une coupure de courant électriques ?' mod='devisservice'}
-        </label>:  {$detailDevisService->libelle3['1']}
-    </p>
-    <p>
-        <label class="control-label col-lg-8">{l s='Dans quelle localité vous trouvez vous ?' mod='devisservice'}
-        </label>:  {$detailDevisService->libelle4['2']}
-    </p>
-    <hr>
-    <p>
-        <label class="control-label col-lg-8">{l s='En cas de délestage quels appareils aimeriez-vous faire fonctionner ?' mod='devisservice'}
-        </label>:  {$detailDevisService->libelle5['2']}
-    </p>
-    {if $detailDevisService->libelle5['2'] eq "ampoule"}
+    {if $detailDevisService->typeservice eq "service-pompage"}
         <p>
-            <label class="control-label col-lg-8">{l s='la maison est-elle déjà installé' mod='devisservice'}
-            </label>: {if $detailDevisService->libelle5_1}
+            <label class="control-label col-lg-8">{l s=' Avez-vous déjà un forage d’eau ?' mod='devisservice'}</label>: {if $detailDevisService->libelle1}
                 <span class="label label-success">
 										<i class="icon-check"></i>
                     {l s='Oui' d='Admin.Global'}
@@ -152,51 +97,144 @@
 									</span>
             {/if}
         </p>
-        {if $detailDevisService->libelle5_1}
         <p>
-            <label class="control-label col-lg-8">{l s='Si oui combien d’ampoules avez-vous au total ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_1_1['2']}
+            <label class="control-label col-lg-8">{l s='Quels sont vos besoins journaliers en eau (quantité d’eau en litre consommée par
+jour)' mod='devisservice'}
+            </label>:  {$detailDevisService->libelle3['1']}
+        </p>
+    {else}
+        <p>
+            <label class="control-label col-lg-8">{l s='Votre localité est-elle alimentée par le courant électrique' mod='devisservice'}</label>: {if $detailDevisService->libelle1}
+                <span class="label label-success">
+										<i class="icon-check"></i>
+                    {l s='Oui' d='Admin.Global'}
+									</span>
+            {else}
+                <span class="label label-danger">
+										<i class="icon-remove"></i>
+                    {l s='Non' d='Admin.Global'}
+									</span>
+            {/if}
         </p>
         <p>
-            <label class="control-label col-lg-8">{l s='Quelle est puissance moyenne ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_1_2['2']}
+            <label class="control-label col-lg-8">{l s='Votre localité est-elle alimentée par le courant électrique' mod='devisservice'}
+            </label>: {if $detailDevisService->libelle1}
+                <span class="label label-success">
+										<i class="icon-check"></i>
+                    {l s='Oui' d='Admin.Global'}
+									</span>
+            {else}
+                <span class="label label-danger">
+										<i class="icon-remove"></i>
+                    {l s='Non' d='Admin.Global'}
+									</span>
+            {/if}
         </p>
-    {/if}
-    {/if}
-    {if $detailDevisService->libelle5['2'] eq "television"}
+
         <p>
-            <label class="control-label col-lg-8">{l s='lécran cathodique ou écran plat ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_3_1['2']}
+            <label class="control-label col-lg-8">{l s='Etes-vous victime des coupures intempestives du courant électrique ?' mod='devisservice'}
+            </label>: {if $detailDevisService->libelle2}
+                <span class="label label-success">
+										<i class="icon-check"></i>
+                    {l s='Oui' d='Admin.Global'}
+									</span>
+            {else}
+                <span class="label label-danger">
+										<i class="icon-remove"></i>
+                    {l s='Non' d='Admin.Global'}
+									</span>
+            {/if}
         </p>
         <p>
-            <label class="control-label col-lg-8">{l s='Combien en avez-vous ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_3_1['2']}
-        </p>
-        <p>
-            <label class="control-label col-lg-8">{l s='Quelle est la taille (pouce) de chacun d’eux ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_3_2['2']}
-        </p>
-        <p>
-            <label class="control-label col-lg-8">{l s='Quelle est leur puissance globale ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_3_3['2']}
+            <label class="control-label col-lg-8">{l s='Combien de temps peut durer une coupure de courant électriques ?' mod='devisservice'}
+            </label>:  {$detailDevisService->libelle3['1']}
         </p>
     {/if}
 
-    {if $detailDevisService->libelle5["2"] eq "frigo-congelateur"}
+
+    <p>
+        <label class="control-label col-lg-8">{l s='Dans quelle localité vous trouvez vous ?' mod='devisservice'}
+        </label>:  {$detailDevisService->libelle4['2']}
+    </p>
+    <hr>
+
+    {if $detailDevisService->typeservice eq "service-pompage"}
         <p>
-            <label class="control-label col-lg-8">{l s='de combien de litre ou de quelle taille?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_2_1['2']}
+            <label class="control-label col-lg-8">{l s='Choix de la pompe (il sera question ici de choisir une pompe en fonction de la
+hauteur manométrique totale du forage et du débit d’eau à fournir)' mod='devisservice'}
+            </label>:  {$detailDevisService->libelle5['2']}
         </p>
+        <p>
+            <label class="control-label col-lg-8">{l s='Choix de la puissance crête nécessaire pour pomper l’eau' mod='devisservice'}
+            </label>:  {$detailDevisService->libelle5_3_1['2']}
+        </p>
+        {else}
+        <p>
+            <label class="control-label col-lg-8">{l s='En cas de délestage quels appareils aimeriez-vous faire fonctionner ?' mod='devisservice'}
+            </label>:  {$detailDevisService->libelle5['2']}
+        </p>
+        {if $detailDevisService->libelle5['2'] eq "ampoule"}
+            <p>
+                <label class="control-label col-lg-8">{l s='la maison est-elle déjà installé' mod='devisservice'}
+                </label>: {if $detailDevisService->libelle5_1}
+                    <span class="label label-success">
+										<i class="icon-check"></i>
+                        {l s='Oui' d='Admin.Global'}
+									</span>
+                {else}
+                    <span class="label label-danger">
+										<i class="icon-remove"></i>
+                        {l s='Non' d='Admin.Global'}
+									</span>
+                {/if}
+            </p>
+            {if $detailDevisService->libelle5_1}
+                <p>
+                    <label class="control-label col-lg-8">{l s='Si oui combien d’ampoules avez-vous au total ?' mod='devisservice'}
+                    </label>:  {$detailDevisService->libelle5_1_1['2']}
+                </p>
+                <p>
+                    <label class="control-label col-lg-8">{l s='Quelle est puissance moyenne ?' mod='devisservice'}
+                    </label>:  {$detailDevisService->libelle5_1_2['2']}
+                </p>
+            {/if}
+        {/if}
+        {if $detailDevisService->libelle5['2'] eq "television"}
+            <p>
+                <label class="control-label col-lg-8">{l s='lécran cathodique ou écran plat ?' mod='devisservice'}
+                </label>:  {$detailDevisService->libelle5_3_1['2']}
+            </p>
+            <p>
+                <label class="control-label col-lg-8">{l s='Combien en avez-vous ?' mod='devisservice'}
+                </label>:  {$detailDevisService->libelle5_3_1['2']}
+            </p>
+            <p>
+                <label class="control-label col-lg-8">{l s='Quelle est la taille (pouce) de chacun d’eux ?' mod='devisservice'}
+                </label>:  {$detailDevisService->libelle5_3_2['2']}
+            </p>
+            <p>
+                <label class="control-label col-lg-8">{l s='Quelle est leur puissance globale ?' mod='devisservice'}
+                </label>:  {$detailDevisService->libelle5_3_3['2']}
+            </p>
+        {/if}
+
+        {if $detailDevisService->libelle5["2"] eq "frigo-congelateur"}
+            <p>
+                <label class="control-label col-lg-8">{l s='de combien de litre ou de quelle taille?' mod='devisservice'}
+                </label>:  {$detailDevisService->libelle5_2_1['2']}
+            </p>
+        {/if}
+
+        {if $detailDevisService->libelle5["2"] eq "ventilateur"}
+            <p>
+                <label class="control-label col-lg-8">{l s='Combien en avez-vous ?' mod='devisservice'}
+                </label>:  {$detailDevisService->libelle5_4_1['2']}
+            </p>
+            <p>
+                <label class="control-label col-lg-8">{l s='Combien aimeriez-vous faire fonctionner en cas de coupure de courant ?' mod='devisservice'}
+                </label>:  {$detailDevisService->libelle5_4_2['2']}
+            </p>
+        {/if}
     {/if}
 
-    {if $detailDevisService->libelle5["2"] eq "ventilateur"}
-        <p>
-            <label class="control-label col-lg-8">{l s='Combien en avez-vous ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_4_1['2']}
-        </p>
-        <p>
-            <label class="control-label col-lg-8">{l s='Combien aimeriez-vous faire fonctionner en cas de coupure de courant ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_4_2['2']}
-        </p>
-    {/if}
 </div>

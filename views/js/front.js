@@ -29,6 +29,16 @@ $(document).ready(function () {
     var $searchWidget = $('#url');
     //var $searchBox    = $("select[class=dd_select]", $element).val()
     var searchURL     = $searchWidget.attr('data-search-controller-url');
+    $('input:radio[name="forage"]').change(function(){
+        $('#responseq1').remove();
+        if($(this).val() == 'forage1'){
+            $('#responseq1').remove();
+            $('.besoin').append('<div class="form-group col-md-6 question" id="responseq1"><label>quelle est sa hauteur manométrique totale (profondeur du forage +hauteur\n' +
+                'du château)? </label>' +
+                '<input id="reponse" type="number" name="reponeforage" class="form-control"/></div></div>');
+        }
+
+    });
     $('.dd_select').on('change',function(){
         var $searchBox    = $(".dd_select").val();
 

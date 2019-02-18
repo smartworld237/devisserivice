@@ -37,42 +37,53 @@
         <form class="form" action="{$devis_controller_url}" method="post">
             <div class="row">
                 <h3>Exploration des besoins</h3>
-                <div class="form-group col-md-6">
-                    <label for="pwd">Votre localité est-elle alimentée par le courant électrique ? </label>
+                <div class="besoin1">
+                <div class="form-group col-md-6 besoin">
+                    <label for="pwd">{l s='Avez-vous déjà un forage d’eau ?'  mod='devisservice'} </label>
                     <div class="form-check">
-                        <input class="form-check-input" name="localite" checked="" type="radio" id="localiteCheckbox1" value="localite1">
+                        <input class="form-check-input" name="forage" type="radio" id="localiteCheckbox1" value="forage1">
                         <label class="form-check-label" for="localiteCheckbox1">oui</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="localite" type="radio" id="localiteCheckbox2" value="localite2">
+                        <input class="form-check-input" name="forage" checked="" type="radio" id="localiteCheckbox2" value="forage2">
                         <label class="form-check-label" for="localiteCheckbox2">Non</label>
                     </div>
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Etes-vous victime des coupures intempestives du courant électrique ? </label>
-                    <div class="form-check">
+                    <label class="hidden">Dans quelle localité vous trouvez vous ? </label>
+                    <div class="form-check hidden">
                         <input class="form-check-input" type="radio" name="coupureCheckbox1" id="coupureCheckbox1" value="coupure1">
                         <label for="coupureCheckbox1">oui</label>
                     </div>
-                    <div class="form-check">
+                    <div class="form-check hidden">
                         <input class="form-check-input" type="radio" name="coupureCheckbox1" id="coupureCheckbox2" value="coupure2">
                         <label for="coupureCheckbox2">Non</label>
                     </div>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="pwd">Combien de temps peut durer une coupure de courant électriques ?</label>
-                    <input type="number" name="qte_electrique" class="form-control" id="pwd1">
+                    <label for="pwd">Dans quelle localité vous trouvez vous ?</label>
+                    <input type="text" name="localite2" class="form-control" id="pwd1">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pwd">Dans quelle localité vous trouvez vous ?</label>
-                    <input type="text" name="localite2" class="form-control" id="pwd2">
+                    <label for="pwd">Quels sont vos besoins journaliers en eau (quantité d’eau en litre consommée par
+                        jour)</label>
+                    <input type="number" name="qteDeau" class="form-control" id="pwd2">
                 </div>
-            </div>
+            </div></div>
             <div class="row">
                 <h3>Dimensionnement (évaluation technique)</h3>
                 <div class="contener">
                     <div class="form-group col-md-6">
+                        <label for="pwd">Choix de la pompe (il sera question ici de choisir une pompe en fonction de la
+                            hauteur manométrique totale du forage et du débit d’eau à fournir)</label>
+                        <input type="text" name="appareils" class="form-control" id="pwd2">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="pwd">Choix de la puissance crête nécessaire pour pomper l’eau</label>
+                        <input type="text" name="puissance" class="form-control" id="pwd2">
+                    </div>
+                   {* <div class="form-group col-md-6">
                         <label for="pwd">En cas de délestage quels appareils aimeriez-vous faire fonctionner ?</label>
                         <select  class="form-control dd_select" id="appareils" name="appareils">
                             <option>choisir appareils</option>
@@ -83,7 +94,7 @@
                             <option value="radio">Radio</option>
                             <option value="frigo-congelateur">frigo ou congélateur</option>
                         </select>
-                    </div>
+                    </div>*}
                 </div>
             </div>
             <button class="btn btn-success" type="submit" name="submitpompage">Demander un Devis</button>
