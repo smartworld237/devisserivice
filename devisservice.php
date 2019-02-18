@@ -65,6 +65,9 @@ class Devisservice extends Module
         Configuration::updateValue('DEVISSERVICE_LIVE_MODE', false);
 
         include(dirname(__FILE__).'/sql/install.php');
+// Install admin tab
+        if (!$this->installTab('IMPROVE', 'AdminDevisservice', 'DevisService'))
+            return false;
 
         return parent::install() &&
             $this->registerHook('header') &&
@@ -77,8 +80,60 @@ class Devisservice extends Module
         Configuration::deleteByName('DEVISSERVICE_LIVE_MODE');
 
         include(dirname(__FILE__).'/sql/uninstall.php');
+// Uninstall admin tab
+        if (!$this->uninstallTab('AdminDevisservice'))
+            return false;
 
         return parent::uninstall();
+    }
+    public function installTab($parent, $class_name, $name)
+    {
+// Create new admin tab
+        $tab = new Tab();
+        $tab->id_parent = (int)Tab::getIdFromClassName($parent);
+        $tab->name = array();
+        foreach (Language::getLanguages(true) as $lang)
+            $tab->name[$lang['id_lang']] = $name;
+        $tab->class_name = $class_name;
+        $tab->module = $this->name;
+        $tab->active = 1;
+        return $tab->add();
+    }
+    public function uninstallTab($class_name)
+    {
+// Retrieve Tab ID
+        $id_tab = (int)Tab::getIdFromClassName($class_name);
+// Load tab
+        $tab = new Tab((int)$id_tab);
+// Delete it
+        return $tab->delete();
+    }
+    /**
+     * Install Module Tabs
+     */
+    private function installModuleTab2($title, $class_sfx = '', $parent = '')
+    {
+        $class = 'Admin'.Tools::ucfirst($this->name).Tools::ucfirst($class_sfx);
+        @copy(_PS_MODULE_DIR_.$this->name.'/logo.gif', _PS_IMG_DIR_.'t/'.$class.'.gif');
+        if ($parent == '') {
+            # validate module
+            $position = Tab::getCurrentTabId();
+        } else {
+            # validate module
+            $position = Tab::getIdFromClassName($parent);
+        }
+
+        $tab1 = new Tab();
+        $tab1->class_name = $class;
+        $tab1->module = $this->name;
+        $tab1->id_parent = (int)$position;
+        $langs = Language::getLanguages(false);
+        foreach ($langs as $l) {
+            # validate module
+            $tab1->name[$l['id_lang']] = $title;
+        }
+//        $id_tab1 = $tab1->add(true, false);
+        $tab1->add(true, false);
     }
 
     /**
@@ -92,7 +147,6 @@ class Devisservice extends Module
         if (((bool)Tools::isSubmit('submitDevisserviceModule')) == true) {
             $this->postProcess();
         }
-
         $this->context->smarty->assign('module_dir', $this->_path);
 
         $output = $this->context->smarty->fetch($this->local_path.'views/templates/admin/configure.tpl');
@@ -143,6 +197,13 @@ class Devisservice extends Module
         $content = $this->getListContent($this->context->language->id);
 
         return $helper->generateList($content, $this->fields_list);
+    }
+    protected function renderDetailDevis(){
+        $this->context->smarty->assign('module_dir', $this->_path);
+
+        $output = $this->context->smarty->fetch($this->local_path.'views/templates/admin/detail.tpl');
+
+        return $output;
     }
     protected function getListContent($id_lang = null)
     {

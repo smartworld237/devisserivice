@@ -45,7 +45,17 @@ class ServiceDevisModel extends ObjectModel
         ),
 
     );
-public function saveDevis(){
+    /**
+     * CustomerCore constructor.
+     *
+     * @param null $id
+     */
+    public function __construct($id = null)
+    {
+        parent::__construct($id);
+    }
+
+    public function saveDevis(){
     $customer = Context::getContext()->customer;
     $devis=new DemandeServiceModel();
     $devis->id_client=$customer->id;

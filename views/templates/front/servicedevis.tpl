@@ -28,14 +28,13 @@
     <div class="container">
         <h1>{l s='Send a Devis' d='Modules.demandedevis'}</h1>
         <p>{l s='If you would like to add a comment about your order, please write it in the field below.' d='Modules.Contactform.Shop'}</p>
-        {if $serviceresidentiel}
+
 
 
         <div id="service-residentiel">
             <input name="service-residentiel" class="hidden"/>
             <h1 class="h3 center-block">{l s='Service Residentiel' d='Modules.demandedevis'}</h1>
-            {if $test}<p>{$test}</p> {/if}
-        </div> {/if}
+        </div>
         <form class="form" action="{$devis_controller_url}" method="post">
             <div class="row">
                 <h3>Exploration des besoins</h3>

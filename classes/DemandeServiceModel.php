@@ -32,4 +32,28 @@ class DemandeServiceModel extends ObjectModel
         }
         return true;
     }
+    public function getDevisByID($id_lang = null){
+        if (is_null($id_lang))
+            $id_lang = (int) Configuration::get('PS_LANG_DEFAULT');
+
+        $sql = 'SELECT d.`id_devisservice`, s.*, c.`firstname` as client
+            FROM `' . _DB_PREFIX_ . 'devisservice`d 
+            LEFT JOIN `' . _DB_PREFIX_ . 'customer` c ON (d.`id_client` = c.`id_customer`) 
+         LEFT JOIN `' . _DB_PREFIX_ . 'devisservicemodel` s ON (s.`id_devisservicemodel` = d.`id_devisservicemodel`) 
+         LEFT JOIN `' . _DB_PREFIX_ . 'devisservicemodel_lang` sl ON (s.`id_devisservicemodel` = sl.`id_devisservicemodel`)
+         where sl.id_lang='.$id_lang.' and d.id_devisservice='.$this->id_devisservicemodel;
+
+
+
+        $content = Db::getInstance()->executeS($sql);
+
+        return $content;
+    }
+    public function getClient(){
+        $client=New Customer($this->id_client);
+        return $client;
+    }
+    public function getService(){
+        return new ServiceDevisModel($this->id_devisservicemodel);
+    }
 }
