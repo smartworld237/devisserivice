@@ -34,6 +34,15 @@
                 <input name="service-residentiel" class="hidden"/>
                 <h1 class="h3 center-block">{l s='Service Pompage' d='Modules.demandedevis'}</h1>
             </div>
+  {*      {if $notifications}
+            <div class="notification {if $notifications.nw_error}notification-error{else}notification-success{/if}">
+                <ul>
+                    {foreach $notifications.messages as $notif}
+                        <li>{$notif}</li>
+                    {/foreach}
+                </ul>
+            </div>
+        {/if}*}
         <form class="form" action="{$devis_controller_url}" method="post">
             <div class="row">
                 <h3>Exploration des besoins</h3>

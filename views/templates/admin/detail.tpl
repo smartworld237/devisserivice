@@ -68,10 +68,24 @@
     <div class=" col-md-6">
         <div class="panel">
             <h3><i class="icon icon-credit-card"></i> {l s='Addresse Du client' mod='devisservice'}</h3>
-
-            {*{foreach $detailDevis as $detail}
-                <p>{$detail->id_devisservice}</p>
-            {/foreach}*}
+            <p>
+                <label class="control-label col-lg-3">{l s='country' d='Admin.Global'}</label>:   {$adress->country}
+            </p>
+            <p>
+                <label class="control-label col-lg-3">{l s='address' d='Admin.Global'}</label>:   {$adress->address1}
+            </p>
+            <p>
+                <label class="control-label col-lg-3">{l s='city' d='Admin.Global'}</label>:   {$adress->city}
+            </p>
+            <p>
+                <label class="control-label col-lg-3">{l s='phone' d='Admin.Global'}</label>:   {$adress->phone}
+            </p>
+            <p>
+                <label class="control-label col-lg-3">{l s='phone mobile' d='Admin.Global'}</label>:   {$adress->phone_mobile}
+            </p>
+            <p>
+                <label class="control-label col-lg-3">{l s='company' d='Admin.Global'}</label>:   {$adress->company}
+            </p>
         </div>
     </div>
 
@@ -96,10 +110,16 @@
                     {l s='Non' d='Admin.Global'}
 									</span>
             {/if}
+            {if $detailDevisService->libelle1}
+                <p>
+                    <label class="control-label col-lg-8">{l s='Quels sont vos besoins journaliers en eau (quantité d’eau en litre consommée par
+jour)' mod='devisservice'}
+                    </label>:  {$detailDevisService->libelle1_1['1']}
+                </p>
+            {/if}
         </p>
         <p>
-            <label class="control-label col-lg-8">{l s='Quels sont vos besoins journaliers en eau (quantité d’eau en litre consommée par
-jour)' mod='devisservice'}
+            <label class="control-label col-lg-8">{l s='quelle est sa hauteur manométrique totale (profondeur du forage +hauteur du château)?' mod='devisservice'}
             </label>:  {$detailDevisService->libelle3['1']}
         </p>
     {else}

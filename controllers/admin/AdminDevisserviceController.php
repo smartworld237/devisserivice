@@ -55,6 +55,7 @@ class AdminDevisserviceController extends ModuleAdminController
             dirname(__FILE__).
             '/../../views/templates/admin/detail.tpl');
         $tpl->assign('customer', $this->object->getClient());
+        $tpl->assign('adress', $this->object->getAdresse());
         $tpl->assign('detailDevisService', $this->object->getService());
         return $tpl->fetch();
     }

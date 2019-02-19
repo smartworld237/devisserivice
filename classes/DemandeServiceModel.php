@@ -56,4 +56,8 @@ class DemandeServiceModel extends ObjectModel
     public function getService(){
         return new ServiceDevisModel($this->id_devisservicemodel);
     }
+    public function getAdresse(){
+        $id_ad=Address::getFirstCustomerAddressId($this->id_client);
+        return new Address($id_ad);
+    }
 }
