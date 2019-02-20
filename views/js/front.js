@@ -62,9 +62,9 @@ $(document).ready(function () {
                     $('#questhome').remove();
                     $('#questhome1').remove();
                     $('.contener').append('<div class="form-group question" id="questhome"><label>combien d’ampoules avez-vous au total ? </label>' +
-                        '<input id="rephome" class="form-control"/></div>');
+                        '<input id="rephome" name="rephome" class="form-control"/></div>');
                     $('.contener').append('<div class="form-group question" id="questhome1"><label>Quelle est puissance moyenne?(ampoule) </label>' +
-                        '<input id="rephome1" class="form-control"/></div></div>');
+                        '<input id="rephome1" name="rephome1" class="form-control"/></div></div>');
 
                 }
             });
@@ -84,13 +84,13 @@ $(document).ready(function () {
         $('#quest_tele4').remove();
         if ( $(this).is( ":checked" ) ){
             $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele1"><label>Votre téléviseur écran cathodique ou écran plat ? </label>' +
-                '<input id="resp1" class="form-control" name="televiseur"/></div>');
+                '<input id="resp1" class="form-control" name="television-type"/></div>');
             $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele2"><label>Combien en avez-vous ?(téléviseur) </label>' +
-                '<input id="resp1" class="form-control" name="televiseur-quantite"/></div>');
+                '<input id="resp2" class="form-control" name="television-quantite"/></div>');
             $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele3"><label>Quelle est la taille (pouce) de chacun d’eux ? (téléviseur)</label>' +
-                '<input id="resp1" class="form-control" name="televiseur-taille"/></div>');
+                '<input id="resp3" class="form-control" name="television-taille"/></div>');
             $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele4"><label>Quelle est leur puissance globale ? (téléviseur)</label>' +
-                '<input id="resp1" class="form-control" name="televiseur-puisance"/></div>');
+                '<input id="resp4" class="form-control" name="television-puissance"/></div>');
         }
     });
     $('input:checkbox[name="ventilateur"]').click(function(){
@@ -98,9 +98,9 @@ $(document).ready(function () {
         $('#quest_vent2').remove();
         if ( $(this).is( ":checked" ) ){
             $('.contener').append('<div class="form-group col-md-6 question" id="quest_vent1"><label>Combien en avez-vous ?(ventilateur) </label>' +
-                '<input id="resp1" class="form-control" name="ventillateur-quantite"/></div>');
+                '<input id="respv1" class="form-control" name="ventilateur-quantite"/></div>');
             $('.contener').append('<div class="form-group col-md-6 question" id="quest_vent2"><label>Combien aimeriez-vous faire fonctionner en cas de coupure de courant ?(ventilateur) </label>' +
-                '<input id="resp1" class="form-control" name="ventillateur-quantite-prevoir"/></div>');
+                '<input id="respv2" class="form-control" name="ventilateur-quantite-prevoir"/></div>');
         }
     });
     $('input:checkbox[name="ordinateur"]').click(function(){
@@ -117,7 +117,7 @@ $(document).ready(function () {
         $('#quest_frigo').remove();
         if ( $(this).is( ":checked" ) ){
             $('.contener').append('<div class="form-group question" id="quest_frigo"><label>Combien aimeriez-vous faire fonctionner en cas de coupure de courant ?(frigo ou congelateur) </label>' +
-                '<input id="resp1" class="form-control" name="frigo-congelateur"/></div>');
+                '<input id="resp1" class="form-control" name="frigo-congelateur-qte"/></div>');
 
         }
     });

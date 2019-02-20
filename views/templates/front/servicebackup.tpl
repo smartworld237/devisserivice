@@ -71,7 +71,46 @@
             </div>
             <div class="row">
                 <h3>{l s='Dimensionnement (évaluation technique)' mod='devisservice'}</h3>
-                <div class="contener">
+                <label class="h5">{l s=' En cas de délestage quels appareils aimeriez-vous faire fonctionner ?' mod='devisservice'}</label>
+                <div class="container contener">
+
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" name="ampoule"  type="checkbox" id="localiteCheckbox1" value="ampoule">
+                            <label class="form-check-label" for="localiteCheckbox1">{l s='éclairage ampoule' mod='devisservice'} </label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" name="television"  type="checkbox" id="localiteCheckbox1" value="television">
+                            <label class="form-check-label" for="localiteCheckbox1">{l s='télévision' mod='devisservice'}</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" name="ventilateur"  type="checkbox" id="localiteCheckbox1" value="ventilateur">
+                            <label class="form-check-label" for="localiteCheckbox1">{l s='ventilateurs' mod='devisservice'}</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" name="ordinateur"  type="checkbox" id="localiteCheckbox1" value="ordinateur">
+                            <label class="form-check-label" for="localiteCheckbox1">{l s='ordinateurs' mod='devisservice'}</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" name="radio"  type="checkbox" id="localiteCheckbox1" value="radio">
+                            <label class="form-check-label" for="localiteCheckbox1">{l s='Radio' mod='devisservice'}</label>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" name="frigo-congelateur"  type="checkbox" id="localiteCheckbox1" value="frigo ou congelateur">
+                            <label class="form-check-label" for="localiteCheckbox1">{l s='frigo ou congélateur' mod='devisservice'}</label>
+                        </div>
+                    </div>
+                {*<div class="contener">
                     <div class="form-group col-md-6">
                         <label for="pwd">{l s='En cas de délestage quels appareils aimeriez-vous faire fonctionner ?' mod='devisservice'}</label>
                         <select  class="form-control dd_select" id="pwd1" name="appareils">
@@ -84,7 +123,7 @@
                             <option value="frigo-congelateur">{l s='frigo ou congélateur' mod='devisservice'}</option>
                         </select>
                     </div>
-                </div>
+                </div>*}
             </div>
             <button class="btn btn-success" type="submit" name="submitbackup">{l s='Demander un Devis' mod='devisservice'}</button>
 

@@ -37,81 +37,78 @@
         </div>
         <form class="form" action="{$devis_controller_url}" method="post">
             <div class="row">
-                <h3>Exploration des besoins</h3>
-                <div class="container">
-
-
+                <h3>{l s='Exploration des besoins' mod='devisservice'}</h3>
                 <div class="form-group col-md-6">
-                    <label for="pwd">Votre localité est-elle alimentée par le courant électrique ? </label>
-                <div class="form-check">
-                    <input class="form-check-input" name="localite" checked="" type="radio" id="localiteCheckbox1" value="localite1">
-                    <label class="form-check-label" for="localiteCheckbox1">oui</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" name="localite" type="radio" id="localiteCheckbox2" value="localite2">
-                    <label class="form-check-label" for="localiteCheckbox2">Non</label>
-                </div>
+                    <label for="pwd">{l s='Votre localité est-elle alimentée par le courant électrique ?' mod='devisservice'} </label>
+                    <div class="form-check">
+                        <input class="form-check-input" name="localite" checked="" type="radio" id="localiteCheckbox1" value="localite1">
+                        <label class="form-check-label" for="localiteCheckbox1">{l s='oui' mod='devisservice'}</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="localite" type="radio" id="localiteCheckbox2" value="localite2">
+                        <label class="form-check-label" for="localiteCheckbox2">{l s='Non' mod='devisservice'}</label>
+                    </div>
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Etes-vous victime des coupures intempestives du courant électrique ? </label>
+                    <label>{l s='Etes-vous victime des coupures intempestives du courant électrique ?' mod='devisservice' } </label>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="coupureCheckbox1" id="coupureCheckbox1" value="coupure1">
-                        <label for="coupureCheckbox1">oui</label>
+                        <label for="coupureCheckbox1">{l s='oui' mod='devisservice'}</label>
                     </div>
                     <div class="form-check">
                         <input class="form-check-input" type="radio" name="coupureCheckbox1" id="coupureCheckbox2" value="coupure2">
-                        <label for="coupureCheckbox2">Non</label>
+                        <label for="coupureCheckbox2">{l s='Non' mod='devisservice'}</label>
                     </div>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label for="pwd">Combien de temps peut durer une coupure de courant électriques ?</label>
+                    <label for="pwd">{l s='Combien de temps peut durer une coupure de courant électriques ?' mod='devisservice'}</label>
                     <input type="number" name="qte_electrique" class="form-control" id="pwd1">
                 </div>
                 <div class="form-group col-md-6">
-                    <label for="pwd">Dans quelle localité vous trouvez vous ?</label>
+                    <label for="pwd">{l s='Dans quelle localité vous trouvez vous ?' mod='devisservice'}</label>
                     <input type="text" name="localite2" class="form-control" id="pwd2">
                 </div>
-            </div></div>
+            </div>
            <div class="row">
-            <h3>Dimensionnement (évaluation technique)</h3>
-               <label class="h5">En cas de délestage quels appareils aimeriez-vous faire fonctionner ?</label>
+               <h3>{l s='Dimensionnement (évaluation technique)' mod='devisservice'}</h3>
+               <label class="h5">{l s=' En cas de délestage quels appareils aimeriez-vous faire fonctionner ?' mod='devisservice'}</label>
                <div class="container contener">
 
                    <div class="col-md-4">
                        <div class="form-check">
-                           <input class="form-check-input" name="ampoule"  type="checkbox" id="localiteCheckbox1" value="localite1">
-                           <label class="form-check-label" for="localiteCheckbox1">éclairage ampoule</label>
+                           <input class="form-check-input" name="ampoule"  type="checkbox" id="localiteCheckbox1" value="ampoule">
+                           <label class="form-check-label" for="localiteCheckbox1">{l s='éclairage ampoule' mod='devisservice'} </label>
                        </div>
                    </div>
                    <div class="col-md-4">
                        <div class="form-check">
-                           <input class="form-check-input" name="television"  type="checkbox" id="localiteCheckbox1" value="localite1">
-                           <label class="form-check-label" for="localiteCheckbox1">télévision</label>
+                           <input class="form-check-input" name="television"  type="checkbox" id="localiteCheckbox1" value="television">
+                           <label class="form-check-label" for="localiteCheckbox1">{l s='télévision' mod='devisservice'}</label>
                        </div>
                    </div>
                    <div class="col-md-4">
                        <div class="form-check">
-                           <input class="form-check-input" name="ventilateur"  type="checkbox" id="localiteCheckbox1" value="localite1">
-                           <label class="form-check-label" for="localiteCheckbox1">ventilateurs</label>
+                           <input class="form-check-input" name="ventilateur"  type="checkbox" id="localiteCheckbox1" value="ventilateur">
+                           <label class="form-check-label" for="localiteCheckbox1">{l s='ventilateurs' mod='devisservice'}</label>
                        </div>
                    </div>
                    <div class="col-md-4">
                        <div class="form-check">
-                           <input class="form-check-input" name="ordinateur"  type="checkbox" id="localiteCheckbox1" value="localite1">
-                           <label class="form-check-label" for="localiteCheckbox1">ordinateur</label>
+                           <input class="form-check-input" name="ordinateur"  type="checkbox" id="localiteCheckbox1" value="ordinateur">
+                           <label class="form-check-label" for="localiteCheckbox1">{l s='ordinateurs' mod='devisservice'}</label>
                        </div>
                    </div>
                    <div class="col-md-4">
                        <div class="form-check">
-                           <input class="form-check-input" name="radio"  type="checkbox" id="localiteCheckbox1" value="localite1">
-                           <label class="form-check-label" for="localiteCheckbox1">Radio</label>
+                           <input class="form-check-input" name="radio"  type="checkbox" id="localiteCheckbox1" value="radio">
+                           <label class="form-check-label" for="localiteCheckbox1">{l s='Radio' mod='devisservice'}</label>
                        </div>
                    </div>
                    <div class="col-md-4">
                        <div class="form-check">
-                           <input class="form-check-input" name="frigo-congelateur"  type="checkbox" id="localiteCheckbox1" value="localite1">
-                           <label class="form-check-label" for="localiteCheckbox1">frigo ou congélateur</label>
+                           <input class="form-check-input" name="frigo-congelateur"  type="checkbox" id="localiteCheckbox1" value="frigo ou congelateur">
+                           <label class="form-check-label" for="localiteCheckbox1">{l s='frigo ou congélateur' mod='devisservice'}</label>
                        </div>
                    </div>
          {*   <div class="form-group col-md-6">
@@ -129,7 +126,7 @@
                </div>
     </div>
             <button class="btn btn-success" type="submit" name="submitresidentiel">Demander un Devis</button>
-
+            <a class="btn btn-success center-block" href="servicedevis.tpl">{l s='Demander un Devis' mod=''}</a>
         </form>
         <br>
     </div>
