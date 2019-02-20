@@ -38,6 +38,9 @@
         <form class="form" action="{$devis_controller_url}" method="post">
             <div class="row">
                 <h3>Exploration des besoins</h3>
+                <div class="container">
+
+
                 <div class="form-group col-md-6">
                     <label for="pwd">Votre localité est-elle alimentée par le courant électrique ? </label>
                 <div class="form-check">
@@ -69,11 +72,49 @@
                     <label for="pwd">Dans quelle localité vous trouvez vous ?</label>
                     <input type="text" name="localite2" class="form-control" id="pwd2">
                 </div>
-            </div>
+            </div></div>
            <div class="row">
             <h3>Dimensionnement (évaluation technique)</h3>
-               <div class="contener">
-            <div class="form-group col-md-6">
+               <label class="h5">En cas de délestage quels appareils aimeriez-vous faire fonctionner ?</label>
+               <div class="container contener">
+
+                   <div class="col-md-4">
+                       <div class="form-check">
+                           <input class="form-check-input" name="ampoule"  type="checkbox" id="localiteCheckbox1" value="localite1">
+                           <label class="form-check-label" for="localiteCheckbox1">éclairage ampoule</label>
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <div class="form-check">
+                           <input class="form-check-input" name="television"  type="checkbox" id="localiteCheckbox1" value="localite1">
+                           <label class="form-check-label" for="localiteCheckbox1">télévision</label>
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <div class="form-check">
+                           <input class="form-check-input" name="ventilateur"  type="checkbox" id="localiteCheckbox1" value="localite1">
+                           <label class="form-check-label" for="localiteCheckbox1">ventilateurs</label>
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <div class="form-check">
+                           <input class="form-check-input" name="ordinateur"  type="checkbox" id="localiteCheckbox1" value="localite1">
+                           <label class="form-check-label" for="localiteCheckbox1">ordinateur</label>
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <div class="form-check">
+                           <input class="form-check-input" name="radio"  type="checkbox" id="localiteCheckbox1" value="localite1">
+                           <label class="form-check-label" for="localiteCheckbox1">Radio</label>
+                       </div>
+                   </div>
+                   <div class="col-md-4">
+                       <div class="form-check">
+                           <input class="form-check-input" name="frigo-congelateur"  type="checkbox" id="localiteCheckbox1" value="localite1">
+                           <label class="form-check-label" for="localiteCheckbox1">frigo ou congélateur</label>
+                       </div>
+                   </div>
+         {*   <div class="form-group col-md-6">
                 <label for="pwd">En cas de délestage quels appareils aimeriez-vous faire fonctionner ?</label>
                 <select  class="form-control dd_select" id="pwd1" name="appareils">
                 <option>choisir appareils</option>
@@ -84,7 +125,7 @@
                     <option value="radio">Radio</option>
                     <option value="frigo-congelateur">frigo ou congélateur</option>
                 </select>
-            </div>
+            </div>*}
                </div>
     </div>
             <button class="btn btn-success" type="submit" name="submitresidentiel">Demander un Devis</button>

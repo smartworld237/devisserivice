@@ -39,13 +39,96 @@ $(document).ready(function () {
         }
 
     });
+
+    $('input:checkbox[name="ampoule"]').click(function(){
+       // $('#responseq1').remove();
+        $('#quest1').remove();
+        $('#questhome').remove();
+        $('#questhome1').remove();
+        $('#quest_tele4').remove();
+        if ( $(this).is( ":checked" ) ){
+            $('.contener').append('<div class="question" id="quest1"><label>la maison est-elle déjà installé? </label><div class="form-check form-check-inline">\n' +
+                '                    <input name="home" type="radio" value="oui">\n' +
+                '                    <label class="form-check-label" for="localiteCheckbox1">oui</label>\n' +
+                '                </div>\n' +
+                '                <div class="form-check form-check-inline">\n' +
+                '                    <input checked="" name="home" type="radio" value="non">\n' +
+                '                    <label class="form-check-label" for="localiteCheckbox2">Non</label>\n' +
+                '                </div></div>');
+            $('input:radio[name="home"]').change(function(){
+                $('#questhome').remove();
+                $('#questhome1').remove();
+                if($(this).val() == 'oui'){
+                    $('#questhome').remove();
+                    $('#questhome1').remove();
+                    $('.contener').append('<div class="form-group question" id="questhome"><label>combien d’ampoules avez-vous au total ? </label>' +
+                        '<input id="rephome" class="form-control"/></div>');
+                    $('.contener').append('<div class="form-group question" id="questhome1"><label>Quelle est puissance moyenne?(ampoule) </label>' +
+                        '<input id="rephome1" class="form-control"/></div></div>');
+
+                }
+            });
+        }
+        /*  if($(this).val() == 'forage1'){
+              $('#responseq1').remove();
+              $('.besoin').append('<div class="form-group col-md-6 question" id="responseq1"><label>quelle est sa hauteur manométrique totale (profondeur du forage +hauteur\n' +
+                  'du château)? </label>' +
+                  '<input id="reponse" type="number" name="reponeforage" class="form-control"/></div></div>');
+          }*/
+
+    });
+    $('input:checkbox[name="television"]').click(function(){
+        $('#quest_tele1').remove();
+        $('#quest_tele2').remove();
+        $('#quest_tele3').remove();
+        $('#quest_tele4').remove();
+        if ( $(this).is( ":checked" ) ){
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele1"><label>Votre téléviseur écran cathodique ou écran plat ? </label>' +
+                '<input id="resp1" class="form-control" name="televiseur"/></div>');
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele2"><label>Combien en avez-vous ?(téléviseur) </label>' +
+                '<input id="resp1" class="form-control" name="televiseur-quantite"/></div>');
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele3"><label>Quelle est la taille (pouce) de chacun d’eux ? (téléviseur)</label>' +
+                '<input id="resp1" class="form-control" name="televiseur-taille"/></div>');
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_tele4"><label>Quelle est leur puissance globale ? (téléviseur)</label>' +
+                '<input id="resp1" class="form-control" name="televiseur-puisance"/></div>');
+        }
+    });
+    $('input:checkbox[name="ventilateur"]').click(function(){
+        $('#quest_vent1').remove();
+        $('#quest_vent2').remove();
+        if ( $(this).is( ":checked" ) ){
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_vent1"><label>Combien en avez-vous ?(ventilateur) </label>' +
+                '<input id="resp1" class="form-control" name="ventillateur-quantite"/></div>');
+            $('.contener').append('<div class="form-group col-md-6 question" id="quest_vent2"><label>Combien aimeriez-vous faire fonctionner en cas de coupure de courant ?(ventilateur) </label>' +
+                '<input id="resp1" class="form-control" name="ventillateur-quantite-prevoir"/></div>');
+        }
+    });
+    $('input:checkbox[name="ordinateur"]').click(function(){
+        if ( $(this).is( ":checked" ) ){
+
+        }
+    });
+    $('input:checkbox[name="radio"]').click(function(){
+        if ( $(this).is( ":checked" ) ){
+
+        }
+    });
+    $('input:checkbox[name="frigo-congelateur"]').click(function(){
+        $('#quest_frigo').remove();
+        if ( $(this).is( ":checked" ) ){
+            $('.contener').append('<div class="form-group question" id="quest_frigo"><label>Combien aimeriez-vous faire fonctionner en cas de coupure de courant ?(frigo ou congelateur) </label>' +
+                '<input id="resp1" class="form-control" name="frigo-congelateur"/></div>');
+
+        }
+    });
     $('.dd_select').on('change',function(){
         var $searchBox    = $(".dd_select").val();
 
         if($searchBox == 'ampoule'){
             $('#quest_tele1').remove();
             $('#quest_tele2').remove();
-            $('#quest_tele3').remove(); $('#quest_tele4').remove();
+            $('#quest_tele3').remove();
+            $('#quest_tele4').remove();
             $('#questhome').remove();
             $('#questhome1').remove();
             $('#quest_vent1').remove();
