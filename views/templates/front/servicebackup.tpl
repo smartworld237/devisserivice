@@ -30,8 +30,7 @@
         <p>{l s='If you would like to add a comment about your order, please write it in the field below.' mod='devisservice'}</p>
 
 
-            <div id="service-residentiel">
-                <input name="service-residentiel" class="hidden"/>
+            <div id="service-backup">
                 <h1 class="h3 center-block">{l s='Service Backup'  mod='devisservice'}</h1>
             </div>
         <form class="form" action="{$devis_controller_url}" method="post">

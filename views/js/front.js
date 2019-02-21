@@ -33,7 +33,7 @@ $(document).ready(function () {
         $('#responseq1').remove();
         if($(this).val() == 'forage1'){
             $('#responseq1').remove();
-            $('.besoin').append('<div class="form-group col-md-6 question" id="responseq1"><label>quelle est sa hauteur manométrique totale (profondeur du forage +hauteur\n' +
+            $('.besoin').append('<div class="form-group question" id="responseq1"><label>quelle est sa hauteur manométrique totale (profondeur du forage +hauteur\n' +
                 'du château)? </label>' +
                 '<input id="reponse" type="number" name="reponeforage" class="form-control"/></div></div>');
         }

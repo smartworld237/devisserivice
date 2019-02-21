@@ -32,7 +32,7 @@
 
             <div id="service-residentiel">
                 <input name="service-residentiel" class="hidden"/>
-                <h1 class="h3 center-block">{l s='Service Pompage' d='Modules.demandedevis'}</h1>
+                <h1 class="h3 center-block">{l s='Service Pompage d eau'  mod='devisservice'}</h1>
             </div>
   {*      {if $notifications}
             <div class="notification {if $notifications.nw_error}notification-error{else}notification-success{/if}">
@@ -47,7 +47,7 @@
             <div class="row">
                 <h3>Exploration des besoins</h3>
                 <div class="besoin1">
-                <div class="form-group col-md-6 besoin">
+                <div class="form-group besoin">
                     <label for="pwd">{l s='Avez-vous déjà un forage d’eau ?'  mod='devisservice'} </label>
                     <div class="form-check">
                         <input class="form-check-input" name="forage" type="radio" id="localiteCheckbox1" value="forage1">
@@ -58,7 +58,7 @@
                         <label class="form-check-label" for="localiteCheckbox2">Non</label>
                     </div>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group">
                     <label class="hidden">Dans quelle localité vous trouvez vous ? </label>
                     <div class="form-check hidden">
                         <input class="form-check-input" type="radio" name="coupureCheckbox1" id="coupureCheckbox1" value="coupure1">
@@ -70,11 +70,11 @@
                     </div>
                 </div>
 
-                <div class="form-group col-md-6">
+                <div class="form-group">
                     <label for="pwd">Dans quelle localité vous trouvez vous ?</label>
                     <input type="text" name="localite2" class="form-control" id="pwd1">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group">
                     <label for="pwd">Quels sont vos besoins journaliers en eau (quantité d’eau en litre consommée par
                         jour)</label>
                     <input type="number" name="qteDeau" class="form-control" id="pwd2">

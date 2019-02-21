@@ -43,15 +43,15 @@ class DevisServiceServiceResidentielModuleFrontController extends ModuleFrontCon
         $devisservice = new DemandeServiceModel();
         $devisservice->id_client = $customer->id;
 
-            $devis->libelle1 = Tools::getValue('localite');
+            $devis->libelle1 = (bool)Tools::getValue('localite');
             //$devis->libelle1_1=Tools::getValue('coupureCheckbox1');
-            $devis->libelle2 = Tools::getValue('coupureCheckbox1');
+            $devis->libelle2 = (bool)Tools::getValue('coupureCheckbox1');
             //$devis->libelle2_1=Tools::getValue('localite2');
             $devis->libelle3 = Tools::getValue('qte_electrique');
             $devis->libelle4 = Tools::getValue('localite2');
             $devis->libelle5 = Tools::getValue('appareils');
             $devis->libelle5_1 = Tools::getValue('ampoule');
-            $devis->libelle5_1_1 = Tools::getValue('home');
+            $devis->libelle5_1_1 =(bool) Tools::getValue('home');
             $devis->libelle5_1_2 = Tools::getValue('rephome');
             $devis->libelle5_1_3 = Tools::getValue('rephome1');
             $devis->libelle5_2 = Tools::getValue('frigo-congelateur');

@@ -26,17 +26,15 @@
 {block name='content'}
 
     <div class="container">
-        <h1>{l s='Send a Devis' d='Modules.demandedevis'}</h1>
-        <p>{l s='If you would like to add a comment about your order, please write it in the field below.' d='Modules.Contactform.Shop'}</p>
+        <h1>{l s='Send a Devis' mod='devisservice'}</h1>
 
-
-
-        <div id="service-residentiel">
-            <input name="service-residentiel" class="hidden"/>
-            <h1 class="h3 center-block">{l s='Service Residentiel' d='Modules.demandedevis'}</h1>
+        <div class="row" id="service-residentiel">
+            <h1 class="">{l s='Service Residentiel' d='Modules.demandedevis'}</h1>
         </div>
+        <hr>
+
         <form class="form" action="{$devis_controller_url}" method="post">
-            <div class="row">
+            <div class="row container">
                 <h3>{l s='Exploration des besoins' mod='devisservice'}</h3>
                 <div class="form-group col-md-6">
                     <label for="pwd">{l s='Votre localité est-elle alimentée par le courant électrique ?' mod='devisservice'} </label>
@@ -125,8 +123,7 @@
             </div>*}
                </div>
     </div>
-            <button class="btn btn-success" type="submit" name="submitresidentiel">Demander un Devis</button>
-            <a class="btn btn-success center-block" href="servicedevis.tpl">{l s='Demander un Devis' mod=''}</a>
+            <button class="btn btn-success" type="submit" name="submitresidentiel">{l s='Send' mod='devisservice'}</button>
         </form>
         <br>
     </div>
