@@ -54,6 +54,7 @@ class AdminDevisserviceController extends ModuleAdminController
         $tpl = $this->context->smarty->createTemplate(
             dirname(__FILE__).
             '/../../views/templates/admin/detail.tpl');
+        $tpl->assign('lang',$this->context->language->id);
         $tpl->assign('customer', $this->object->getClient());
         $tpl->assign('adress', $this->object->getAdresse());
         $tpl->assign('detailDevisService', $this->object->getService());

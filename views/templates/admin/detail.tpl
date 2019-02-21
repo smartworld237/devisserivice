@@ -114,13 +114,13 @@
                 <p>
                     <label class="control-label col-lg-8">{l s='Quels sont vos besoins journaliers en eau (quantité d’eau en litre consommée par
 jour)' mod='devisservice'}
-                    </label>:  {$detailDevisService->libelle1_1['1']}
+                    </label>:  {$detailDevisService->libelle1_1[$lang]}
                 </p>
             {/if}
         </p>
         <p>
             <label class="control-label col-lg-8">{l s='quelle est sa hauteur manométrique totale (profondeur du forage +hauteur du château)?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle3['1']}
+            </label>:  {$detailDevisService->libelle3[$lang]}
         </p>
     {else}
         <p>
@@ -167,14 +167,14 @@ jour)' mod='devisservice'}
         </p>
         <p>
             <label class="control-label col-lg-8">{l s='Combien de temps peut durer une coupure de courant électriques ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle3['1']}
+            </label>:  {$detailDevisService->libelle3[$lang]}
         </p>
     {/if}
 
 
     <p>
         <label class="control-label col-lg-8">{l s='Dans quelle localité vous trouvez vous ?' mod='devisservice'}
-        </label>:  {$detailDevisService->libelle4['2']}
+        </label>:  {$detailDevisService->libelle4[$lang]}
     </p>
     <hr>
 
@@ -182,21 +182,21 @@ jour)' mod='devisservice'}
         <p>
             <label class="control-label col-lg-8">{l s='Choix de la pompe (il sera question ici de choisir une pompe en fonction de la
 hauteur manométrique totale du forage et du débit d’eau à fournir)' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5['2']}
+            </label>:  {$detailDevisService->libelle5[$lang]}
         </p>
         <p>
             <label class="control-label col-lg-8">{l s='Choix de la puissance crête nécessaire pour pomper l’eau' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5_3_1['2']}
+            </label>:  {$detailDevisService->libelle5_3_1[$lang]}
         </p>
         {else}
         <p>
             <label class="control-label col-lg-8">{l s='En cas de délestage quels appareils aimeriez-vous faire fonctionner ?' mod='devisservice'}
-            </label>:  {$detailDevisService->libelle5['2']}
+            </label>:  {$detailDevisService->libelle5[$lang]}
         </p>
-        {if $detailDevisService->libelle5_1['1'] eq "ampoule"}
+        {if $detailDevisService->libelle5_1[$lang] eq "ampoule"}
             <div class="panel panel-success">
                 <div class="panel-heading">
-                    {$detailDevisService->libelle5_1['1']}
+                    {$detailDevisService->libelle5_1[$lang]}
                 </div>
                 <p>
                     <label class="control-label col-lg-8">{l s='la maison est-elle déjà installé' mod='devisservice'}
@@ -215,66 +215,66 @@ hauteur manométrique totale du forage et du débit d’eau à fournir)' mod='de
                 {if $detailDevisService->libelle5_1_1}
                     <p>
                         <label class="control-label col-lg-8">{l s='Si oui combien d’ampoules avez-vous au total ?' mod='devisservice'}
-                        </label>:  {$detailDevisService->libelle5_1_2['2']}
+                        </label>:  {$detailDevisService->libelle5_1_2[$lang]}
                     </p>
                     <p>
                         <label class="control-label col-lg-8">{l s='Quelle est puissance moyenne ?' mod='devisservice'}
-                        </label>:  {$detailDevisService->libelle5_1_3['2']}
+                        </label>:  {$detailDevisService->libelle5_1_3[$lang]}
                     </p>
                 {/if}
             </div>
 
         {/if}
-        {if $detailDevisService->libelle5_3['1'] eq "television"}
+        {if $detailDevisService->libelle5_3[$lang] eq "television"}
             <div class="panel panel-primary">
                 <div class="panel-heading">
-                    {$detailDevisService->libelle5_3['1']}
+                    {$detailDevisService->libelle5_3[$lang]}
                 </div>
                 <p>
                     <label class="control-label col-lg-8">{l s='lécran cathodique ou écran plat ?' mod='devisservice'}
-                    </label>:  {$detailDevisService->libelle5_3_1['2']}
+                    </label>:  {$detailDevisService->libelle5_3_1[$lang]}
                 </p>
                 <p>
                     <label class="control-label col-lg-8">{l s='Combien en avez-vous ?' mod='devisservice'}
-                    </label>:  {$detailDevisService->libelle5_3_2['2']}
+                    </label>:  {$detailDevisService->libelle5_3_2[$lang]}
                 </p>
                 <p>
                     <label class="control-label col-lg-8">{l s='Quelle est la taille (pouce) de chacun d’eux ?' mod='devisservice'}
-                    </label>:  {$detailDevisService->libelle5_3_3['2']}
+                    </label>:  {$detailDevisService->libelle5_3_3[$lang]}
                 </p>
                 <p>
                     <label class="control-label col-lg-8">{l s='Quelle est leur puissance globale ?' mod='devisservice'}
-                    </label>:  {$detailDevisService->libelle5_3_4['2']}
+                    </label>:  {$detailDevisService->libelle5_3_4[$lang]}
                 </p>
             </div>
 
         {/if}
 
-        {if $detailDevisService->libelle5_2['1'] eq "frigo ou congelateur"}
+        {if $detailDevisService->libelle5_2[$lang] eq "frigo ou congelateur"}
             <div class="panel panel-danger">
                 <div class="panel-heading">
-                    {$detailDevisService->libelle5_2['2']}
+                    {$detailDevisService->libelle5_2[$lang]}
                 </div>
                 <p>
                     <label class="control-label col-lg-8">{l s='de combien de litre ou de quelle taille?' mod='devisservice'}
-                    </label>:  {$detailDevisService->libelle5_2_1['2']}
+                    </label>:  {$detailDevisService->libelle5_2_1[$lang]}
                 </p>
             </div>
 
         {/if}
 
-        {if $detailDevisService->libelle5_4['1'] eq "ventilateur"}
+        {if $detailDevisService->libelle5_4[$lang] eq "ventilateur"}
     <div class="panel panel-info">
         <div class="panel-heading">
-            {$detailDevisService->libelle5_4['2']}
+            {$detailDevisService->libelle5_4[$lang]}
         </div>
             <p>
                 <label class="control-label col-lg-8">{l s='Combien en avez-vous ?' mod='devisservice'}
-                </label>:  {$detailDevisService->libelle5_4_1['2']}
+                </label>:  {$detailDevisService->libelle5_4_1[$lang]}
             </p>
             <p>
                 <label class="control-label col-lg-8">{l s='Combien aimeriez-vous faire fonctionner en cas de coupure de courant ?' mod='devisservice'}
-                </label>:  {$detailDevisService->libelle5_4_2['2']}
+                </label>:  {$detailDevisService->libelle5_4_2[$lang]}
             </p>
         </div>
         {/if}
